@@ -1,15 +1,16 @@
 {
-  "name": "eslint-config-airbnb",
-  "version": "13.0.0",
-  "description": "Airbnb's ESLint config, following our styleguide",
+  "name": "eslint-config-wesm87",
+  "version": "13.1.0",
+  "description": "Airbnb's ESLint config, updated for compatibility with the latest versions of the ESLint plugins it uses",
   "main": "index.js",
   "scripts": {
     "lint": "eslint .",
     "tests-only": "babel-tape-runner ./test/test-*.js",
-    "prepublish": "(in-install || eslint-find-rules --unused) && (not-in-publish || npm test) && safe-publish-latest",
+    "find-unused-rules": "eslint-find-rules --unused",
+    "prepublish": "(in-install || npm run --silent find-unused-rules) && (not-in-publish || npm test) && safe-publish-latest",
     "pretest": "npm run --silent lint",
     "test": "npm run --silent tests-only",
-    "travis": "cd ../eslint-config-airbnb-base && npm install && npm link && cd - && npm link eslint-config-airbnb-base && npm run --silent test ; npm unlink eslint-config-airbnb-base >/dev/null &"
+    "travis": "cd ../eslint-config-wesm87-base && npm install && npm link && cd - && npm link eslint-config-wesm87-base && npm run --silent test ; npm unlink eslint-config-wesm87-base >/dev/null &"
   },
   "repository": {
     "type": "git",
@@ -45,15 +46,15 @@
   },
   "homepage": "https://github.com/airbnb/javascript",
   "dependencies": {
-    "eslint-config-airbnb-base": "^10.0.1"
+    "eslint-config-wesm87-base": "^10.0.1"
   },
   "devDependencies": {
     "babel-preset-airbnb": "^2.1.1",
     "babel-tape-runner": "^2.0.1",
-    "eslint": "^3.9.1",
+    "eslint": "^3.10.0",
     "eslint-find-rules": "^1.14.3",
-    "eslint-plugin-import": "^2.1.0",
-    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^3.0.1",
     "eslint-plugin-react": "^6.6.0",
     "in-publish": "^2.0.0",
     "react": ">= 0.13.0",
@@ -61,9 +62,9 @@
     "tape": "^4.6.2"
   },
   "peerDependencies": {
-    "eslint": "^3.9.1",
-    "eslint-plugin-jsx-a11y": "^2.2.3",
-    "eslint-plugin-import": "^2.1.0",
+    "eslint": "^3.10.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^3.0.1",
     "eslint-plugin-react": "^6.6.0"
   },
   "engines": {

@@ -1,6 +1,6 @@
-# eslint-config-airbnb
+# eslint-config-wesm87
 
-[![npm version](https://badge.fury.io/js/eslint-config-airbnb.svg)](http://badge.fury.io/js/eslint-config-airbnb)
+[![npm version](https://badge.fury.io/js/eslint-config-wesm87.svg)](http://badge.fury.io/js/eslint-config-wesm87)
 
 This package provides Airbnb's .eslintrc as an extensible shared config.
 
@@ -8,14 +8,14 @@ This package provides Airbnb's .eslintrc as an extensible shared config.
 
 We export three ESLint configurations for your usage.
 
-### eslint-config-airbnb
+### eslint-config-wesm87
 
 Our default export contains all of our ESLint rules, including ECMAScript 6+ and React. It requires `eslint`, `eslint-plugin-import`, `eslint-plugin-react`, and `eslint-plugin-jsx-a11y`.
 
 1. Ensure packages are installed with correct version numbers by running:
   ```sh
   (
-    export PKG=eslint-config-airbnb;
+    export PKG=eslint-config-wesm87;
     npm info "$PKG@latest" peerDependencies --json | command sed 's/[\{\},]//g ; s/: /@/g' | xargs npm install --save-dev "$PKG@latest"
   )
   ```
@@ -23,18 +23,18 @@ Our default export contains all of our ESLint rules, including ECMAScript 6+ and
   Which produces and runs a command like:
 
   ```sh
-  npm install --save-dev eslint-config-airbnb eslint@^#.#.# eslint-plugin-jsx-a11y@^#.#.# eslint-plugin-import@^#.#.# eslint-plugin-react@^#.#.#
+  npm install --save-dev eslint-config-wesm87 eslint@^#.#.# eslint-plugin-jsx-a11y@^#.#.# eslint-plugin-import@^#.#.# eslint-plugin-react@^#.#.#
   ```
 
 2. Add `"extends": "airbnb"` to your .eslintrc
 
-### eslint-config-airbnb/base
+### eslint-config-wesm87/base
 
-This entry point is deprecated. See [eslint-config-airbnb-base](https://npmjs.com/eslint-config-airbnb-base).
+This entry point is deprecated. See [eslint-config-wesm87-base](https://npmjs.com/eslint-config-wesm87-base).
 
-### eslint-config-airbnb/legacy
+### eslint-config-wesm87/legacy
 
-This entry point is deprecated. See [eslint-config-airbnb-base](https://npmjs.com/eslint-config-airbnb-base).
+This entry point is deprecated. See [eslint-config-wesm87-base](https://npmjs.com/eslint-config-wesm87-base).
 
 See [Airbnb's Javascript styleguide](https://github.com/airbnb/javascript) and
 the [ESlint config docs](http://eslint.org/docs/user-guide/configuring#extending-configuration-files)
