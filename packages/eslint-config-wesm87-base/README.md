@@ -1,21 +1,29 @@
-# eslint-config-wesm87-base
+# eslint-config-airbnb-base
 
-[![npm version](https://badge.fury.io/js/eslint-config-wesm87-base.svg)](http://badge.fury.io/js/eslint-config-wesm87-base)
+[![npm version](https://badge.fury.io/js/eslint-config-airbnb-base.svg)](http://badge.fury.io/js/eslint-config-airbnb-base)
 
-This package provides Airbnb's base JS .eslintrc as an extensible shared config.
+This package provides Airbnb's base JS .eslintrc (without React plugins) as an extensible shared config.
 
 ## Usage
 
 We export two ESLint configurations for your usage.
 
-### eslint-config-wesm87-base
+### eslint-config-airbnb-base
 
 Our default export contains all of our ESLint rules, including ECMAScript 6+. It requires `eslint` and `eslint-plugin-import`.
 
-1. Ensure packages are installed with correct version numbers by running:
+If you use yarn, run `npm info "eslint-config-airbnb-base@latest" peerDependencies` to list the peer dependencies and versions, then run `yarn add --dev <dependency>@<version>` for each listed peer dependency. See below for npm instructions.
+
+1. Install the correct versions of each package, which are listed by the command:
+
+  ```sh
+  npm info "eslint-config-airbnb-base@latest" peerDependencies
+  ```
+
+  Linux/OSX users can run
   ```sh
   (
-    export PKG=eslint-config-wesm87-base;
+    export PKG=eslint-config-airbnb-base;
     npm info "$PKG@latest" peerDependencies --json | command sed 's/[\{\},]//g ; s/: /@/g' | xargs npm install --save-dev "$PKG@latest"
   )
   ```
@@ -23,19 +31,38 @@ Our default export contains all of our ESLint rules, including ECMAScript 6+. It
   Which produces and runs a command like:
 
   ```sh
-    npm install --save-dev eslint-config-wesm87-base eslint@^#.#.# eslint-plugin-import@^#.#.#
+    npm install --save-dev eslint-config-airbnb-base eslint@^#.#.# eslint-plugin-import@^#.#.#
   ```
 
-2. Add `"extends": "airbnb-base"` to your .eslintrc
+  Windows users can either install all the peer dependencies manually, or use the [install-peerdeps](https://github.com/nathanhleung/install-peerdeps) cli tool.
 
-### eslint-config-wesm87-base/legacy
+  ```sh
+  npm install -g install-peerdeps
+  install-peerdeps --dev eslint-config-airbnb-base
+  ```
+
+  The cli will produce and run a command like:
+
+  ```sh
+  npm install --save-dev eslint-config-airbnb-base eslint@^#.#.# eslint-plugin-import@^#.#.#
+  ```
+
+2. Add `"extends": "airbnb-base"` to your .eslintrc.
+
+### eslint-config-airbnb-base/legacy
 
 Lints ES5 and below. Requires `eslint` and `eslint-plugin-import`.
 
-1. Ensure packages are installed with correct version numbers by running:
+1. Install the correct versions of each package, which are listed by the command:
+
+  ```sh
+  npm info "eslint-config-airbnb-base@latest" peerDependencies
+  ```
+
+  Linux/OSX users can run
   ```sh
   (
-    export PKG=eslint-config-wesm87-base;
+    export PKG=eslint-config-airbnb-base;
     npm info "$PKG" peerDependencies --json | command sed 's/[\{\},]//g ; s/: /@/g' | xargs npm install --save-dev "$PKG"
   )
   ```
@@ -43,12 +70,12 @@ Lints ES5 and below. Requires `eslint` and `eslint-plugin-import`.
   Which produces and runs a command like:
 
   ```sh
-  npm install --save-dev eslint-config-wesm87-base eslint@^3.0.1 eslint-plugin-import@^1.10.3
+  npm install --save-dev eslint-config-airbnb-base eslint@^3.0.1 eslint-plugin-import@^1.10.3
   ```
 
 2. Add `"extends": "airbnb-base/legacy"` to your .eslintrc
 
-See [Airbnb's overarching ESLint config](https://npmjs.com/eslint-config-wesm87), [Airbnb's Javascript styleguide](https://github.com/airbnb/javascript), and the [ESlint config docs](http://eslint.org/docs/user-guide/configuring#extending-configuration-files) for more information.
+See [Airbnb's overarching ESLint config](https://npmjs.com/eslint-config-airbnb), [Airbnb's Javascript styleguide](https://github.com/airbnb/javascript), and the [ESlint config docs](https://eslint.org/docs/user-guide/configuring#extending-configuration-files) for more information.
 
 ## Improving this config
 
